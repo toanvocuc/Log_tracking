@@ -1,9 +1,8 @@
 from pathlib import Path
 
-from log_parser import read_log_file
-from log_analyzer import analyze_logs
-from report_writer import write_report
-
+from log_investigator.log_parser import read_log_file
+from log_investigator.log_analyzer import analyze_logs
+from log_investigator.report_writer import write_report
 
 def main() -> None:
     project_root = Path(__file__).resolve().parents[2]

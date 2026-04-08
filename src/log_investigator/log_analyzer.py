@@ -1,7 +1,7 @@
 from typing import List
 import ipaddress
 
-from log_parser import parse_log_line
+from log_investigator.log_parser import parse_log_line
 
 
 def is_valid_ip(ip_value: str) -> bool:
