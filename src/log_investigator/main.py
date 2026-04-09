@@ -38,7 +38,7 @@ def main() -> None:
     try:
         lines = read_log_file(input_file)
         issues = analyze_logs(lines)
-        write_report(issues, output_file)
+        write_report(issues, output_file, input_file)
 
         print("Analysis complete. Report generated at: {}".format(output_file))
     except FileNotFoundError as error:
