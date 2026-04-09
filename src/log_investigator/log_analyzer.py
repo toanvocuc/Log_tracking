@@ -45,30 +45,22 @@ def analyze_logs(lines: List[str]) -> List[str]:
         if missing_fields:
             issues.append(
                 "Line {}: Missing field(s): {} -> {}".format(
-                    line_number,
-                    ", ".join(missing_fields),
-                    line
+                    line_number, ", ".join(missing_fields), line
                 )
             )
             continue
 
         if not is_valid_ip(parsed["IP"]):
-            issues.append(
-                "Line {}: Invalid IP address -> {}".format(line_number, parsed["IP"])
-            )
+            issues.append("Line {}: Invalid IP address -> {}".format(line_number, parsed["IP"]))
 
         if parsed["Status"] == "500":
             issues.append(
-                "Line {}: Server error status detected -> {}".format(
-                    line_number, parsed["Status"]
-                )
+                "Line {}: Server error status detected -> {}".format(line_number, parsed["Status"])
             )
 
         if not is_valid_response_time(parsed["ResponseTime"]):
             issues.append(
-                "Line {}: Invalid response time -> {}".format(
-                    line_number, parsed["ResponseTime"]
-                )
+                "Line {}: Invalid response time -> {}".format(line_number, parsed["ResponseTime"])
             )
 
     return issues

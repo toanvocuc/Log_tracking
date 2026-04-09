@@ -11,19 +11,15 @@ def parse_arguments():
     parser = argparse.ArgumentParser(
         prog="log-investigator",
         description="Analyze log files and generate an error report.",
-        epilog="Example: PYTHONPATH=src python3 -m log_investigator.main --input sample_logs/test.txt"
+        epilog="Example: PYTHONPATH=src python3 -m log_investigator.main --input sample_logs/test.txt",
     )
 
-    parser.add_argument(
-        "--input",
-        required=True,
-        help="Path to the input log file"
-    )
+    parser.add_argument("--input", required=True, help="Path to the input log file")
 
     parser.add_argument(
         "--output",
         default="reports/report.txt",
-        help="Path to the output report file (default: reports/report.txt)"
+        help="Path to the output report file (default: reports/report.txt)",
     )
 
     return parser.parse_args()
