@@ -5,6 +5,16 @@ from log_investigator.log_analyzer import (
 )
 
 
+TEST_RULES = {
+    "fail_status_codes": [500, 502, 503],
+    "response_time_threshold_ms": 1000,
+    "required_fields": ["Timestamp", "IP", "Status", "ResponseTime"],
+    "fail_on_invalid_ip": True,
+    "fail_on_invalid_format": True,
+    "fail_on_missing_fields": True,
+}
+
+
 def test_is_valid_ip_with_valid_ip():
     assert is_valid_ip("192.168.1.1") is True
     assert is_valid_ip("8.8.8.8") is True
@@ -35,7 +45,7 @@ def test_analyze_logs_detects_expected_issues():
         "random text not valid",
     ]
 
-    issues = analyze_logs(lines)
+    issues = analyze_logs(lines, TEST_RULES)
 
     assert len(issues) == 5
     assert any("Invalid IP address" in issue for issue in issues)

@@ -1,0 +1,8 @@
+{
+  "fail_status_codes": [500, 502, 503],
+  "response_time_threshold_ms": 1000,
+  "required_fields": ["Timestamp", "IP", "Status", "ResponseTime"],
+  "fail_on_invalid_ip": true,
+  "fail_on_invalid_format": true,
+  "fail_on_missing_fields": true
+}

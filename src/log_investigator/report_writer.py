@@ -7,6 +7,7 @@ def summarize_issues(issues: List[str]) -> Dict[str, int]:
         "Server error status": 0,
         "Invalid IP address": 0,
         "Invalid response time": 0,
+        "High response time": 0,
         "Missing field": 0,
         "Invalid log format": 0,
         "Other": 0,
@@ -19,6 +20,8 @@ def summarize_issues(issues: List[str]) -> Dict[str, int]:
             summary["Invalid IP address"] += 1
         elif "Invalid response time" in issue:
             summary["Invalid response time"] += 1
+        elif "High response time" in issue:
+            summary["High response time"] += 1
         elif "Missing field(s)" in issue:
             summary["Missing field"] += 1
         elif "Invalid log format" in issue:
@@ -30,9 +33,6 @@ def summarize_issues(issues: List[str]) -> Dict[str, int]:
 
 
 def write_report(issues: List[str], output_path: Path, source_path: Path) -> None:
-    """
-    Write detected issues into the report file.
-    """
     summary = summarize_issues(issues)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
