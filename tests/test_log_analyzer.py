@@ -53,3 +53,4 @@ def test_analyze_logs_detects_expected_issues():
     assert any("Invalid response time" in issue for issue in issues)
     assert any("Missing field(s)" in issue for issue in issues)
     assert any("Invalid log format" in issue for issue in issues)
+    assert any(issue.startswith("[ERROR]") or issue.startswith("[CRITICAL]") for issue in issues)
