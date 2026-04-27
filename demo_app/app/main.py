@@ -1,32 +1,84 @@
-from fastapi import FastAPI
+from datetime import datetime
+from pathlib import Path
 from time import sleep, time
 import logging
 
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+
 app = FastAPI()
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="Timestamp:%(asctime)s|Level:%(levelname)s|Message:%(message)s",
-)
-logger = logging.getLogger(__name__)
+LOG_DIR = Path(__file__).resolve().parents[1] / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+LOG_FILE = LOG_DIR / "app.log"
+
+logger = logging.getLogger("demo_app")
+logger.setLevel(logging.INFO)
+logger.propagate = False
+
+if not logger.handlers:
+    formatter = logging.Formatter("%(message)s")
+
+    file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
+    file_handler.setFormatter(formatter)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+
+
+def write_log(request: Request, status_code: int, response_time_ms: int) -> None:
+    client_ip = request.client.host if request.client else "unknown"
+
+    log_line = "Timestamp:{}|IP:{}|Path:{}|Status:{}|ResponseTime:{}ms".format(
+        datetime.now().isoformat(),
+        client_ip,
+        request.url.path,
+        status_code,
+        response_time_ms,
+    )
+
+    if status_code >= 500:
+        logger.error(log_line)
+    else:
+        logger.info(log_line)
 
 
 @app.get("/health")
-def health():
-    logger.info("Health check endpoint called")
-    return {"status": "ok"}
+def health(request: Request):
+    start_time = time()
+
+    response = {"status": "ok"}
+
+    duration_ms = int((time() - start_time) * 1000)
+    write_log(request, 200, duration_ms)
+
+    return response
 
 
 @app.get("/slow")
-def slow():
+def slow(request: Request):
     start_time = time()
+
     sleep(2)
+    response = {"status": "slow"}
+
     duration_ms = int((time() - start_time) * 1000)
-    logger.info("Slow endpoint called|ResponseTime:%sms", duration_ms)
-    return {"status": "slow", "response_time_ms": duration_ms}
+    write_log(request, 200, duration_ms)
+
+    return response
 
 
 @app.get("/error")
-def error():
-    logger.error("Error endpoint called|Status:500")
-    return {"status": "error", "code": 500}
+def error(request: Request):
+    start_time = time()
+
+    duration_ms = int((time() - start_time) * 1000)
+    write_log(request, 500, duration_ms)
+
+    return JSONResponse(
+        status_code=500,
+        content={"status": "error", "code": 500},
+    )
