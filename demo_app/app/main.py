@@ -30,7 +30,11 @@ if not logger.handlers:
 
 
 def write_log(request: Request, status_code: int, response_time_ms: int) -> None:
-    client_ip = request.client.host if request.client else "unknown"
+    forwarded_for = request.headers.get("x-forwarded-for")
+    if forwarded_for:
+        client_ip = forwarded_for.split(",")[0].strip()
+    else:
+        client_ip = request.client.host if request.client else "unknown"
 
     log_line = "Timestamp:{}|IP:{}|Path:{}|Status:{}|ResponseTime:{}ms".format(
         datetime.now().isoformat(),

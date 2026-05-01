@@ -2,3 +2,6 @@ Timestamp:2026-04-27T15:27:28.640172|IP:127.0.0.1|Path:/health|Status:200|Respon
 Timestamp:2026-04-27T15:28:34.146042|IP:127.0.0.1|Path:/slow|Status:200|ResponseTime:2002ms
 Timestamp:2026-04-27T15:28:43.264302|IP:127.0.0.1|Path:/error|Status:500|ResponseTime:0ms
 Timestamp:2026-04-29T17:29:53.057809|IP:172.18.0.1|Path:/health|Status:200|ResponseTime:0ms
+Timestamp:2026-05-01T18:45:34.854545|IP:172.18.0.1|Path:/error|Status:500|ResponseTime:0ms
+Timestamp:2026-05-01T18:45:41.578032|IP:172.18.0.1|Path:/slow|Status:200|ResponseTime:2001ms
+Timestamp:2026-05-01T18:45:46.354664|IP:172.18.0.1|Path:/health|Status:200|ResponseTime:0ms

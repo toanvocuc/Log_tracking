@@ -1,0 +1,31 @@
+2026/05/01 18:38:48 [notice] 1#1: using the "epoll" event method
+2026/05/01 18:38:48 [notice] 1#1: nginx/1.29.8
+2026/05/01 18:38:48 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+2026/05/01 18:38:48 [notice] 1#1: OS: Linux 5.4.0-216-generic
+2026/05/01 18:38:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2026/05/01 18:38:48 [notice] 1#1: start worker processes
+2026/05/01 18:38:48 [notice] 1#1: start worker process 21
+2026/05/01 18:39:30 [error] 21#21: *1 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: _, request: "GET /health HTTP/1.1", upstream: "http://172.18.0.2:8000/health", host: "127.0.0.1:8080"
+2026/05/01 18:39:33 [error] 21#21: *3 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: _, request: "GET /slow HTTP/1.1", upstream: "http://172.18.0.2:8000/slow", host: "127.0.0.1:8080"
+2026/05/01 18:39:45 [error] 21#21: *5 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: _, request: "GET /error HTTP/1.1", upstream: "http://172.18.0.2:8000/error", host: "127.0.0.1:8080"
+2026/05/01 18:40:03 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2026/05/01 18:40:03 [notice] 21#21: gracefully shutting down
+2026/05/01 18:40:03 [notice] 21#21: exiting
+2026/05/01 18:40:03 [notice] 21#21: exit
+2026/05/01 18:40:03 [notice] 1#1: signal 17 (SIGCHLD) received from 21
+2026/05/01 18:40:03 [notice] 1#1: worker process 21 exited with code 0
+2026/05/01 18:40:03 [notice] 1#1: exit
+2026/05/01 18:44:54 [notice] 1#1: using the "epoll" event method
+2026/05/01 18:44:54 [notice] 1#1: nginx/1.29.8
+2026/05/01 18:44:54 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+2026/05/01 18:44:54 [notice] 1#1: OS: Linux 5.4.0-216-generic
+2026/05/01 18:44:54 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2026/05/01 18:44:54 [notice] 1#1: start worker processes
+2026/05/01 18:44:54 [notice] 1#1: start worker process 20
+2026/05/01 18:49:44 [notice] 1#1: using the "epoll" event method
+2026/05/01 18:49:44 [notice] 1#1: nginx/1.29.8
+2026/05/01 18:49:44 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+2026/05/01 18:49:44 [notice] 1#1: OS: Linux 5.4.0-216-generic
+2026/05/01 18:49:44 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2026/05/01 18:49:44 [notice] 1#1: start worker processes
+2026/05/01 18:49:44 [notice] 1#1: start worker process 20
