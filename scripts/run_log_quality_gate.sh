@@ -3,7 +3,7 @@
 set -e
 
 INPUT_LOG="${1:-demo_app/logs/app.log}"
-CONFIG_FILE="${2:-config/rules.json}"
+CONFIG_FILE="${2:-config/rule.json}"
 OUTPUT_REPORT="${3:-reports/demo_app_report.txt}"
 
 echo "Running log quality gate..."

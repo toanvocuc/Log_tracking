@@ -44,7 +44,7 @@ The demo application generates realistic logs through normal, slow, and error en
 ```text
 log-investigato/
 ├── config/
-│   └── rules.json
+│   └── rule.json
 ├── demo_app/
 │   ├── app/
 │   │   └── main.py

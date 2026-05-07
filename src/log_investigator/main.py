@@ -14,7 +14,7 @@ def parse_arguments():
         description="Analyze log files and generate an error report.",
         epilog=(
             "Example: PYTHONPATH=src python3 -m log_investigator.main "
-            "--input sample_logs/test.txt --config config/rules.json"
+            "--input sample_logs/test.txt --config config/rule.json"
         ),
     )
 
@@ -32,8 +32,8 @@ def parse_arguments():
 
     parser.add_argument(
         "--config",
-        default="config/rules.json",
-        help="Path to the rules config file (default: config/rules.json)",
+        default="config/rule.json",
+        help="Path to the rules config file (default: config/rule.json)",
     )
 
     parser.add_argument(
