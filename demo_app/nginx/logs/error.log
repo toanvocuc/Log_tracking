@@ -64,3 +64,10 @@
 2026/05/05 16:51:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
 2026/05/05 16:51:19 [notice] 1#1: start worker processes
 2026/05/05 16:51:19 [notice] 1#1: start worker process 20
+2026/05/05 16:53:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2026/05/05 16:53:43 [notice] 20#20: gracefully shutting down
+2026/05/05 16:53:43 [notice] 20#20: exiting
+2026/05/05 16:53:43 [notice] 20#20: exit
+2026/05/05 16:53:43 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+2026/05/05 16:53:43 [notice] 1#1: worker process 20 exited with code 0
+2026/05/05 16:53:43 [notice] 1#1: exit
