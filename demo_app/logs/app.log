@@ -22,3 +22,11 @@ Timestamp:2026-05-05T16:52:23.456756|IP:172.18.0.1|Path:/slow|Status:200|Respons
 Timestamp:2026-05-05T16:52:25.481610|IP:172.18.0.1|Path:/slow|Status:200|ResponseTime:2000ms
 Timestamp:2026-05-05T16:52:25.510238|IP:172.18.0.1|Path:/error|Status:500|ResponseTime:0ms
 Timestamp:2026-05-05T16:52:25.546830|IP:172.18.0.1|Path:/error|Status:500|ResponseTime:0ms
+Timestamp:2026-05-07T15:42:54.023344|IP:172.18.0.1|Path:/slow|Status:200|ResponseTime:2000ms
+Timestamp:2026-05-07T15:44:38.307629|IP:172.18.0.1|Path:/health|Status:200|ResponseTime:0ms
+Timestamp:2026-05-07T15:44:38.370807|IP:172.18.0.1|Path:/health|Status:200|ResponseTime:0ms
+Timestamp:2026-05-07T15:44:38.430687|IP:172.18.0.1|Path:/health|Status:200|ResponseTime:0ms
+Timestamp:2026-05-07T15:44:40.495378|IP:172.18.0.1|Path:/slow|Status:200|ResponseTime:2000ms
+Timestamp:2026-05-07T15:44:42.550751|IP:172.18.0.1|Path:/slow|Status:200|ResponseTime:2000ms
+Timestamp:2026-05-07T15:44:42.603079|IP:172.18.0.1|Path:/error|Status:500|ResponseTime:0ms
+Timestamp:2026-05-07T15:44:42.654568|IP:172.18.0.1|Path:/error|Status:500|ResponseTime:0ms
